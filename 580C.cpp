@@ -22,7 +22,7 @@ long long int dfs(long long int k,long long int c){
     }
     else c=0;
 
-    cout<<k<<" "<<c<<endl;
+    //cout<<k<<" "<<c<<endl;
     if(c>m)
     return 0;
 
@@ -33,7 +33,7 @@ long long int dfs(long long int k,long long int c){
     if(!a[k].arr.size()){
         ctr=1;
     }
-    cout<<"ctr= "<<ctr<<endl<<endl;
+    //cout<<"ctr= "<<ctr<<endl<<endl;
     return ctr;
 
 }
