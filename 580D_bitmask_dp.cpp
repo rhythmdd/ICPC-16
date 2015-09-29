@@ -29,7 +29,7 @@ int main(){
                 for(j=0;j<n;j++){
                     if(!(mask&(1<<j))){
                         //cout<<mask<<" "<<i<<" "<<dp[mask][i]<<endl;
-                        dp[mask|1<<j][i]=dp[mask][i]+a[j]+c[i][j];
+                        dp[mask|1<<j][j]=max(dp[mask|1<<j][j],dp[mask][i]+a[j]+c[i][j]);
                     }
                 }
                 ctr++;
