@@ -5,18 +5,19 @@
 #include<algorithm>
 #include<iostream>
 using namespace std;
-int c[20][20];
-int a[20];
-int dp[270000][20];
+long long c[20][20];
+long long  a[20];
+long long  dp[500000][20];
 int main(){
-    int i,n,m,k,x,y,sat,j,l,mask,sum,ctr=0;
+    long long i,n,m,k,x,y,sat,j,l,mask,ctr=0;
+    long long  sum;
     cin>>n>>m>>k;
     memset(c,0,sizeof(c));
     for(i=0;i<n;i++){
-        scanf("%d",&a[i]);
+        scanf("%lld",&a[i]);
     }
     for(i=0;i<k;i++){
-        scanf("%d %d %d",&x,&y,&sat);
+        scanf("%lld %lld %lld",&x,&y,&sat);
         c[x-1][y-1]=sat;
     }
     for(i=0;i<n;i++)
@@ -29,7 +30,8 @@ int main(){
                 for(j=0;j<n;j++){
                     if(!(mask&(1<<j))){
                         //cout<<mask<<" "<<i<<" "<<dp[mask][i]<<endl;
-                        dp[mask|1<<j][i]=dp[mask][i]+a[j]+c[i][j];
+                        //cout<<dp[mask|1<<j][j]<<endl;
+                        dp[mask|1<<j][j]=max(dp[mask|1<<j][j],dp[mask][i]+a[j]+c[i][j]);
                     }
                 }
                 ctr++;
