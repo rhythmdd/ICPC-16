@@ -6,16 +6,16 @@
 #include<vector>
 #include<stack>
 using namespace std;
-int n,m;
+long long int n,m;
 typedef struct node{
-    int val,visit,c;
-    vector<int> arr;
+    long long int val,visit,c;
+    vector<long long int> arr;
 }node;
-stack<int> dd;
+stack<long long int> dd;
 node a[100000];
 
-int dfs(int k,int c){
-    int i,ctr=0;
+long long int dfs(long long int k,long long int c){
+    long long int i,ctr=0;
     a[k].visit=1;
 
     //cout<<k<<" "<<c<<endl;
@@ -40,7 +40,7 @@ int dfs(int k,int c){
 
 
 int main(){
-    int i,j,k;
+    long long int i,j,k;
     cin>>n>>m;
     for(i=0;i<n;i++){
         scanf("%d",&a[i].val);
